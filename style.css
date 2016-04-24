@@ -1,3 +1,93 @@
+
+/*
+  Force full width & height.
+  If this block is removed, the layout height/length will be determined by
+  the amount of content in the page. That might result in a page which has
+  a footer only a few inches from the top of the viewport, or one which
+  scrolls beyond the viewport.
+  This forces the layout to always be full screen regardless of how much,
+  or how little, content is in place. Neither is "right" or "wrong", there
+  are valid cases for each. I just want to be clear what's controlling the
+  page/viewport height.
+*/
+html, body, .viewport {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+/* Flex/expand vertically. */
+.vbox {
+  display: -webkit-flex;
+  display:    -moz-flex;
+  display:     -ms-flex;
+  display:         flex;
+  -webkit-flex-direction: column;
+     -moz-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+/* Flex/expand horizontally. */
+.hbox {
+  display: -webkit-flex;
+  display:    -moz-flex;
+  display:     -ms-flex;
+  display:         flex;
+  -webkit-flex-direction: row;
+     -moz-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.space-between {
+  -webkit-justify-content: space-between;
+     -moz-justify-content: space-between;
+      -ms-justify-content: space-between;
+          justify-content: space-between;
+}
+
+.main {
+  -webkit-flex: 1;
+     -moz-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+article {
+  -webkit-flex: 5;
+     -moz-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+}
+aside, nav {
+  -webkit-flex: 1;
+     -moz-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+header {
+  padding: 10px;
+  background: #f3f3f3;
+}
+
+.sidebar {
+  padding: 10px;
+  background: #fbfbfb;
+}
+
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* aspect ratio */
+    vertical-align: top;
+    overflow: hidden;
+}
+.svg-content-responsive {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
 .node {
   stroke: #fff;
   stroke-width: 1.5px;
